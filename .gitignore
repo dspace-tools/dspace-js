@@ -1,0 +1,4 @@
+# only for dev purpose
+config.json
+
+node_modules/

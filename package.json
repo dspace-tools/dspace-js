@@ -1,0 +1,20 @@
+{
+  "name": "dspace-js",
+  "version": "0.0.1",
+  "description": "A client for Dspace rest api ",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dspace"
+  ],
+  "author": "Luiz Zamboni",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
+}
