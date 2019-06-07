@@ -1,5 +1,5 @@
 
-const { email, password, hostname, ssl = true } = require("/config.json")
+const { email, password, hostname, ssl = true } = require("./conf.json")
 
 
 const client = require("./lib/v6/")({ hostname, ssl });
@@ -8,15 +8,14 @@ const client = require("./lib/v6/")({ hostname, ssl });
 (async () => {
   try {
 
-    const hasRestApi = await client.test()
+    const hasRestApi = await client.healthCheck()
 
     // console.log("hasRestApi:", hasRestApi)
 
-    const { sessionId }  = await client.login(email, password)
-
+    const { sessionId }  = await client.login({ email, password })
 
     const communities = await client.listTopCommunities({ limit: 10, offset: 0}, sessionId)
-    // console.log("communities:", communities)
+    console.log("communities:", communities)
 
     for(const community of communities) {
       
