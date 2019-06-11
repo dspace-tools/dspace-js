@@ -10,7 +10,7 @@ const client = require("./lib/v6/")({ hostname, ssl });
 
     const hasRestApi = await client.healthCheck()
 
-    // console.log("hasRestApi:", hasRestApi)
+    console.log("hasRestApi:", hasRestApi)
 
     const { sessionId }  = await client.login({ email, password })
 
