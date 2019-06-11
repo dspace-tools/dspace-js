@@ -19,12 +19,12 @@ const client = require("./lib/v6/")({ hostname, ssl });
 
     for(const community of communities) {
       
-      const collections = await client.listCollectionsOfCommunity({}, sessionId, community.uuid)
+      const collections = await client.listCollectionsOfCommunity({ sessionId }, community.uuid)
       for(const collection of collections) {
 
         // console.log("collection:", collection)
       
-        const items = await client.listItemsOfCollection({ expand: [ "metadata" ]}, sessionId, collection.uuid)
+        const items = await client.listCollectionItems({ expand: [ "metadata" ], sessionId }, collection.uuid)
 
         for(const item of items) {
           console.log("Item name: ", item.name )
